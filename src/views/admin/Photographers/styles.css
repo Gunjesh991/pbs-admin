@@ -1,0 +1,72 @@
+.register__body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  filter: opacity(1) blur(0x);
+  transition: 0.2s ease-in;
+}
+.register__form {
+  flex: 0 1 500px;
+}
+.register__form h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.register__body.loading {
+  filter: opacity(0.3) blur(5x);
+}
+
+.register__body .input__field {
+  display: flex;
+  flex-direction: column;
+
+  margin: 25px 0;
+}
+.input__field label {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  position: relative;
+  width: fit-content;
+}
+.input__field label::after {
+  content: "*";
+  color: red;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+}
+.input__field input,
+.input__field textarea {
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid #333;
+  font-size: 16px;
+  font-weight: 500;
+
+  font-family: var(--ff-main);
+}
+.input__field input:focus,
+.input__field textarea:focus {
+  outline: none;
+}
+.input__field textarea {
+  resize: vertical;
+}
+.register__body form button[type="submit"] {
+  width: 100%;
+  background: var(--color-accent);
+  border: none;
+  cursor: pointer;
+  padding: 15px 0;
+  color: white;
+  font-family: var(--ff-main);
+  font-size: 16px;
+}
+
+@media (max-width: 480px) {
+  .register__body {
+    grid-template-columns: 10fr;
+  }
+}

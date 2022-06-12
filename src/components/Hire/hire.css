@@ -1,0 +1,122 @@
+.hire {
+  width: 100%;
+  padding-top: 100px;
+}
+.hire__wrapper {
+  width: 100%;
+  max-width: var(--safe-width);
+  margin: 0 auto;
+  font-family: var(--ff-main);
+  padding: 20px;
+  padding-bottom: 100px;
+}
+.hire__header {
+  width: 100%;
+  padding: 25px 0 90px;
+}
+.hire__header h2 {
+  font-size: 4em;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+.hire__header h2 span {
+  color: var(--color-accent);
+}
+.hire__header p {
+  line-height: 2;
+  margin: 0;
+}
+.hire__header small {
+  color: #333;
+  font-size: 1.2em;
+}
+.hire__body {
+  width: 100%;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 5fr 5fr;
+
+  filter: opacity(1) blur(0x);
+  transition: 0.2s ease-in;
+}
+.hire__body.loading {
+  filter: opacity(0.3) blur(5x);
+}
+.hire__body .input__field {
+  display: flex;
+  flex-direction: column;
+
+  margin: 15px 0;
+}
+.input__field label {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  position: relative;
+  width: fit-content;
+}
+.input__field label::after {
+  content: "*";
+  color: red;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+}
+.input__field.optional label::after {
+  content: " ";
+}
+.input__field input,
+.input__field textarea,
+.photographers__select select {
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid #333;
+  font-size: 16px;
+  font-weight: 500;
+
+  font-family: var(--ff-main);
+}
+.input__field input:focus,
+.input__field textarea:focus {
+  outline: none;
+}
+.input__field textarea {
+  resize: vertical;
+}
+.hire__body button[type="submit"] {
+  width: 100%;
+  background: var(--color-accent);
+  border: none;
+  cursor: pointer;
+  padding: 15px 0;
+  color: white;
+  font-family: var(--ff-main);
+  font-size: 16px;
+}
+.estimate__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.estimate__details .est {
+  padding-bottom: 175px;
+}
+.event__details {
+  margin-bottom: 50px;
+}
+.event__details input[type="date"] {
+  width: 100%;
+}
+.photographers__select select {
+  width: 75%;
+}
+@media (max-width: 480px) {
+  .hire__body {
+    grid-template-columns: 10fr;
+  }
+  .estimate__details .est {
+    padding-bottom: 0;
+  }
+  .photographers__select select {
+    width: 100%;
+  }
+}

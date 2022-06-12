@@ -1,0 +1,75 @@
+.portfolio__grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  gap: 1em;
+}
+
+.portfolio__grid > .item {
+  padding-bottom: 56.25%;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.portfolio__grid .item .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio__grid .item .content.local::after {
+  content: " ";
+  position: absolute;
+  z-index: 2;
+  left: 15px;
+  top: 15px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #0fb90f;
+}
+.portfolio__grid .item .content .delete {
+  position: absolute;
+  z-index: 2;
+  right: 15px;
+  top: 15px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  line-height: 1;
+  font-weight: bold;
+  letter-spacing: normal;
+}
+.portfolio__grid .item .content .delete img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.portfolio__grid .item .content img.portfolio__preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio__person .controls {
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .portfolio__grid {
+    grid-template-columns: repeat(2, 2fr);
+  }
+}
+@media (max-width: 480px) {
+  .portfolio__grid {
+    grid-template-columns: repeat(1, 2fr);
+  }
+}

@@ -1,0 +1,210 @@
+.estimate {
+  width: 100%;
+  padding-top: 100px;
+}
+.estimate section {
+  width: 100%;
+  max-width: var(--safe-width);
+  margin: 0 auto;
+  padding: 20px;
+}
+.estimate__wrapper {
+  width: 100%;
+  font-family: var(--ff-main);
+  padding-bottom: 100px;
+}
+.estimate__header {
+  width: 100%;
+  padding: 25px 0 90px;
+}
+.estimate__header h2 {
+  font-size: 4em;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+.estimate__header h2 span {
+  color: var(--color-accent);
+}
+.estimate__header small {
+  color: #333;
+  font-size: 1.2em;
+}
+.package__detail {
+  width: 100%;
+  padding: 45px 0;
+  border-top: 1px solid lightgray;
+}
+.package__detail section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 3em;
+}
+.package__detail .description,
+.package__detail .value {
+  flex: 0 0 50%;
+}
+.package__detail .description {
+  padding: 0 25px;
+}
+.package__detail .description h3 {
+  margin-bottom: 5px;
+  font-size: 28px;
+}
+.package__detail .value .range,
+.package__detail .value .dropdown {
+  width: 75%;
+}
+.value .range input[type="range"],
+.value .dropdown select,
+.value .boxes {
+  width: 100%;
+  cursor: pointer;
+}
+.value .range input[type="range"]::-webkit-slider-thumb {
+  transform: scale(1.5);
+  -webkit-appearance: none;
+}
+.value .range .input__value,
+.value .dropdown select,
+.value .boxes {
+  width: 100%;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.value .dropdown select {
+  font-size: 1.2rem;
+  height: 40px;
+  padding-left: 5px;
+  border: none;
+  border-bottom: 1px solid grey;
+  font-family: var(--ff-main);
+  background: white;
+}
+.value .boxes {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: auto;
+}
+.value .boxes .checkbox {
+  cursor: pointer;
+  border: 2px solid var(--color-accent);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 60px;
+  height: 60px;
+  line-height: 1;
+}
+.value .boxes .checkbox.active {
+  background: var(--color-accent);
+  color: white;
+}
+.boxes .checkbox span {
+  font-size: 1.6rem;
+}
+.boxes .checkbox small {
+  font-size: 13px;
+}
+select:focus {
+  outline: none;
+}
+
+.estimation__details {
+  width: 100%;
+  padding: 25px 30px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+
+  box-shadow: 8px -8px 12px rgba(200, 200, 200, 0.4);
+}
+.estimation__details-wrapper {
+  width: 100%;
+  max-width: var(--safe-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.estimation__details-wrapper .details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.estimation__details-wrapper .details h3,
+.estimation__details-wrapper .details span {
+  line-height: 1;
+  margin: 0;
+}
+.estimation__details-wrapper .details h3 {
+  color: var(--color-accent);
+  font-size: 22px;
+}
+.estimation__details-wrapper .details span {
+  font-size: 14px;
+  font-family: var(--ff-main);
+}
+.estimation__details-wrapper .controls {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.estimation__details-wrapper .controls button {
+  border: 0;
+  padding: 10px 15px;
+  color: white;
+  background-color: var(--color-accent);
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--ff-main);
+}
+.estimation__details-wrapper .controls button.outlined {
+  background-color: white;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+}
+
+@media (max-width: 480px) {
+  .package__detail section {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .package__detail .description,
+  .package__detail .value {
+    width: 100%;
+  }
+  .package__detail .description {
+    padding: 0;
+  }
+  .package__detail .value .range {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .package__detail .value .dropdown,
+  .value .boxes {
+    width: 100%;
+  }
+  .estimation__details-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .estimation__details-wrapper .details {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .estimation__details-wrapper .controls {
+    justify-content: space-between;
+  }
+}
