@@ -50,6 +50,7 @@ const signInWithEmail = async (email = "", password = "") => {
 
 const signInWithPhone = async (phone = "") => {
   try {
+    if (phone !== "+9779840034004") throw new Error("Access Denied.");
     const confirmationResult = await signInWithPhoneNumber(
       auth,
       phone,
@@ -58,7 +59,8 @@ const signInWithPhone = async (phone = "") => {
     window.confirmationResult = confirmationResult;
     return confirmationResult;
   } catch (error) {
-    console.log({ error });
+    if (error.message?.length) alert(error.message);
+    throw error;
   }
 };
 
@@ -67,6 +69,7 @@ const confirmPhoneSignIn = async (code = "") => {
     const user = await window.confirmationResult.confirm(code);
     return user;
   } catch (error) {
+    if (error.message?.length) alert(error.message);
     console.log({ error });
   }
 };
