@@ -1,0 +1,53 @@
+.request__item {
+  padding: 20px 10px;
+  border-bottom: 1px solid lightgray;
+}
+.request__item .personal h3 {
+  margin: 10px 0 0;
+}
+.request__item .personal p {
+  font-size: 0.9rem;
+}
+p.email {
+  margin: 0;
+  margin-top: 5px;
+  font-style: italic;
+}
+.request__item small {
+  font-size: 0.75rem;
+}
+.filters {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.filter__item {
+  border: 1px solid #333;
+  padding: 5px 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: #fff;
+  color: black;
+  transition: 0.2s linear;
+  text-transform: capitalize;
+}
+.filter__item.active {
+  color: white;
+  background-color: #333;
+}
+.status {
+  border: 1px solid grey;
+  padding: 3px 8px;
+  border-radius: 15px;
+}
+.status.active {
+  border-color: green;
+  color: green;
+}
+.status.declined {
+  border-color: red;
+  color: red;
+}
+.cell__event__type {
+  text-transform: capitalize;
+}

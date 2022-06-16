@@ -3,7 +3,7 @@ import {
   collection,
   doc,
   getDoc,
-  getDocsFromServer,
+  getDocs,
   getFirestore,
   query,
   setDoc,
@@ -23,7 +23,7 @@ export const useAdminPhotographers = () => {
   const getPhotographerList = async () => {
     setLoading(true);
     try {
-      const { docs } = await getDocsFromServer(query(table));
+      const { docs } = await getDocs(query(table));
       setPhotographers(docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     } catch (e) {
       return "";

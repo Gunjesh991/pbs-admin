@@ -9,6 +9,8 @@ import EditPhotographer from "../views/admin/Photographers/edit";
 import AdminPortfolioView from "../views/admin/Portfolio";
 import PersonView from "../views/admin/Portfolio/PersonView";
 import AdminLogin from "../views/admin/Auth/login";
+import RequestsView from "../views/admin/Requests";
+import RequestsListView from "../views/admin/Requests/list";
 
 const AppRoutes = () => {
   return (
@@ -24,6 +26,9 @@ const AppRoutes = () => {
           </Route>
           <Route path="portfolio" element={<AdminPortfolioView />}>
             <Route path=":pid" element={<PersonView />} />
+          </Route>
+          <Route path="requests" element={<RequestsView />}>
+            <Route index element={<RequestsListView />} />
           </Route>
         </Route>
       </Routes>
